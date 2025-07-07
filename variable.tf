@@ -144,23 +144,24 @@ variable "enable_scheduled_snapshot" {
 variable "scheduled_snapshots_enabled" {
   description = "Whether scheduled snapshots are enabled"
   type        = bool
-  
+  default     = false
 }
 
 variable "snapshot_location" {
   description = "The Cloud Storage bucket location for storing snapshots"
   type        = string
+  default     = null
   
 }
 
 variable "snapshot_creation_schedule" {
   description = "Cron schedule for creating snapshots (e.g., '0 2 * * *' for daily at 2 AM)"
   type        = string
-  
+  default     = "0 2 * * *"
 }
 
 variable "snapshot_time_zone" {
   description = "Time zone for the snapshot schedule"
   type        = string
- 
+  default     = "UTC"
 }
